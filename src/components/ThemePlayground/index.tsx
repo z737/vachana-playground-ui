@@ -168,7 +168,7 @@ export default function ThemePlayground() {
               title="Custom"
               style={state.primary === 'custom'
                 ? { backgroundColor: state.customColor, backgroundImage: 'none', borderRadius: '50%' }
-                : { backgroundImage: 'linear-gradient(135deg, #f97316, #ec4899, #8b5cf6, #3b82f6, #10b981)', borderRadius: '50%' }
+                : { background: 'conic-gradient(hsl(0,100%,55%), hsl(30,100%,55%), hsl(60,100%,55%), hsl(90,100%,55%), hsl(120,100%,55%), hsl(150,100%,55%), hsl(180,100%,55%), hsl(210,100%,55%), hsl(240,100%,55%), hsl(270,100%,55%), hsl(300,100%,55%), hsl(330,100%,55%), hsl(360,100%,55%))', borderRadius: '50%' }
               }
             >
               <input

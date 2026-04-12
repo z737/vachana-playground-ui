@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Download, Sparkles, Plus, Palette, Clock, Mic, Cpu, Languages, ChevronDown } from 'lucide-react'
+import { motion } from 'framer-motion'
 import Sidebar from '../../components/Sidebar'
 import { useTheme } from '../../context/ThemeContext'
+import { blurUp, slideRight, scaleIn } from '../../lib/motionVariants'
 
 export default function SpeechToTextPage() {
   const { setPanelOpen } = useTheme()
@@ -17,7 +19,7 @@ export default function SpeechToTextPage() {
       <main className="main-wrap">
         {/* Page Header */}
         <header className="page-header">
-          <h1 className="page-title">Speech To Text</h1>
+          <motion.h1 className="page-title" {...blurUp}>Speech To Text</motion.h1>
           <div className="page-actions">
             <button className="btn-download" aria-label="Download">
               <Download size={20} strokeWidth={1.8} />
@@ -80,15 +82,15 @@ export default function SpeechToTextPage() {
               </div>
 
               {/* Hero text */}
-              <p className="hero-text">
+              <motion.p className="hero-text" {...blurUp} transition={{ ...blurUp.transition, delay: 0.1 }}>
                 Speak in any languages and see<br />the live transcription
-              </p>
+              </motion.p>
 
               {/* Mic */}
               <div className="mic-section">
-                <button className="mic-button" aria-label="Start speaking">
-                  <Mic size={48} strokeWidth={1.6} color="white" />
-                </button>
+                <motion.button className="mic-button" aria-label="Start speaking" {...scaleIn}>
+                  <Mic size={48} strokeWidth={1.8} color="white" />
+                </motion.button>
                 <span className="start-speaking">Start Speaking</span>
               </div>
 
@@ -96,7 +98,7 @@ export default function SpeechToTextPage() {
           </div>
 
           {/* Config Panel */}
-          <aside className="config-panel">
+          <motion.aside className="config-panel" {...slideRight}>
             {/* Model */}
             <div className="config-section">
               <div className="config-section-header">
@@ -137,7 +139,7 @@ export default function SpeechToTextPage() {
                 <ChevronDown size={20} strokeWidth={1.8} />
               </div>
             </div>
-          </aside>
+          </motion.aside>
         </div>
       </main>
     </div>

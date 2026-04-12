@@ -3,6 +3,8 @@ import {
   Grid3x3, Expand, MoreVertical, SlidersHorizontal,
   Calendar, Download, TrendingUp, Clock, Search, Upload, Palette
 } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { blurUp, staggerContainer, fadeUp } from '../../lib/motionVariants'
 import {
   ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
   PieChart, Pie, Cell,
@@ -53,7 +55,7 @@ export default function AgentDashboardPage() {
       <div className="main-wrap">
         {/* Dashboard Header */}
         <div className="dash-header">
-          <span className="dash-title">Stats</span>
+          <motion.span className="dash-title" {...blurUp}>Stats</motion.span>
           <div className="dash-header-actions">
             <div className="dash-search">
               <Search size={16} strokeWidth={1.8} />
@@ -101,14 +103,14 @@ export default function AgentDashboardPage() {
           <div className="overview-row">
 
             {/* 2×2 Stat cards */}
-            <div className="stat-cards-grid">
+            <motion.div className="stat-cards-grid" variants={staggerContainer} initial="initial" animate="animate">
               {[
                 { label: 'Base Allocation',         value: '4,45,255', pct: null },
                 { label: 'Total Calls Connected',   value: '3,06,661', pct: '36.17%' },
                 { label: 'Total Attempted',         value: '8,47,687', pct: null },
                 { label: 'Not Connected Calls',     value: '5,41,026', pct: '63.80%' },
               ].map(card => (
-                <div className="stat-card" key={card.label}>
+                <motion.div className="stat-card" key={card.label} variants={fadeUp}>
                   <div className="stat-card-top">
                     <div className="stat-label-row">
                       <span className="stat-label">{card.label}</span>
@@ -122,12 +124,12 @@ export default function AgentDashboardPage() {
                     {card.value}
                     {card.pct && <span className="stat-pct"> {card.pct}</span>}
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Bar chart */}
-            <div className="bar-chart-card">
+            <motion.div className="bar-chart-card" {...fadeUp} transition={{ duration: 0.22, delay: 0.28 }}>
               {[
                 { label: 'Base Allocation',  width: '100%', pct: '100%', value: '4,45,255' },
                 { label: 'Unique Attempted', width: '75%',  pct: '67%',  value: '1,42,252' },
@@ -150,14 +152,19 @@ export default function AgentDashboardPage() {
                   <span className="bar-pct">11%</span>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
 
           {/* Charts row */}
-          <div className="charts-row">
+          <motion.div
+            className="charts-row"
+            initial="initial"
+            animate="animate"
+            variants={{ initial: {}, animate: { transition: { staggerChildren: 0.08, delayChildren: 0.3 } } }}
+          >
 
             {/* Line chart — Recharts */}
-            <div className="chart-card">
+            <motion.div className="chart-card" variants={fadeUp}>
               <div className="chart-header">
                 <div className="chart-header-top">
                   <span className="chart-title">Total Calls Trend</span>
@@ -197,10 +204,10 @@ export default function AgentDashboardPage() {
                   </LineChart>
                 </ResponsiveContainer>
               </div>
-            </div>
+            </motion.div>
 
             {/* Donut chart — Recharts */}
-            <div className="chart-card">
+            <motion.div className="chart-card" variants={fadeUp}>
               <div className="chart-header">
                 <div className="chart-header-top">
                   <span className="chart-title">Total Calls Connectivity Status</span>
@@ -241,9 +248,9 @@ export default function AgentDashboardPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

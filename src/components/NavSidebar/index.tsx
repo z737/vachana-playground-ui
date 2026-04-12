@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { PanelLeft } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { slideLeft } from '../../lib/motionVariants'
 
 interface NavItem {
   icon: React.ReactNode
@@ -19,7 +21,11 @@ export default function NavSidebar({ title, items, activeLabel }: NavSidebarProp
   const [collapsed, setCollapsed] = useState(false)
 
   return (
-    <div className={`nav-sidebar${collapsed ? ' nav-sidebar-collapsed' : ''}`}>
+    <motion.div
+      className={`nav-sidebar${collapsed ? ' nav-sidebar-collapsed' : ''}`}
+      {...slideLeft}
+      transition={{ ...slideLeft.transition, delay: 0.05 }}
+    >
       <div className="nav-sidebar-header">
         {!collapsed && <span className="nav-sidebar-title">{title}</span>}
         <button
@@ -48,6 +54,6 @@ export default function NavSidebar({ title, items, activeLabel }: NavSidebarProp
           </a>
         ))}
       </nav>
-    </div>
+    </motion.div>
   )
 }

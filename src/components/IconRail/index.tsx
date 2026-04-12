@@ -1,4 +1,6 @@
 import { LayoutGrid, Cpu, Plug, BookOpen, Settings2, Bell, Shield, HelpCircle } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { slideLeft } from '../../lib/motionVariants'
 
 interface IconRailProps {
   logoSrc: string
@@ -21,7 +23,7 @@ const bottomIcons = [
 
 export default function IconRail({ logoSrc, activeIndex = 0 }: IconRailProps) {
   return (
-    <div className="icon-rail">
+    <motion.div className="icon-rail" {...slideLeft}>
       <div className="ir-top">
         <div className="ir-platform">
           <img src={logoSrc} alt="Logo" className="ir-logo" />
@@ -40,6 +42,6 @@ export default function IconRail({ logoSrc, activeIndex = 0 }: IconRailProps) {
           <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=64&h=64&fit=crop&crop=face" alt="User" />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

@@ -301,8 +301,8 @@ body {
 .config-section-header { display:flex; gap:12px; align-items:flex-start; }
 .config-icon-box {
   width:40px; height:40px; flex-shrink:0; border-radius:var(--r-md);
-  border:1px solid var(--border);
-  background:var(--bg-surface);
+  border:1px solid var(--border-soft);
+  background:var(--bg-surface-2);
   display:flex; align-items:center; justify-content:center;
   color:var(--text-muted);
 }
@@ -407,7 +407,7 @@ body[data-theme="dark"] .tab-toggle-item.active { background:var(--bg-item); col
   box-shadow:none;
   pointer-events:none;
 }
-.mic-button svg { width:48px !important; height:48px !important; color:white; stroke-width:1.6 !important; }
+.mic-button svg { width:48px !important; height:48px !important; color:white; stroke-width:1.8 !important; }
 
 .start-speaking {
   font-family:var(--font-mono); font-weight:500;

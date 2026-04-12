@@ -1,6 +1,8 @@
 import { AlignLeft, Brain, AudioLines, Mic, Languages, ScanFace, KeyRound, BarChart3, CreditCard, BookOpen, ChevronDown, ChevronsUpDown } from 'lucide-react'
+import { motion } from 'framer-motion'
 import { useTheme } from '../../context/ThemeContext'
 import VachanaLogo from '../../assets/Logo.png'
+import { slideLeft } from '../../lib/motionVariants'
 
 interface NavItem {
   icon: React.ReactNode
@@ -44,7 +46,7 @@ export default function Sidebar() {
   useTheme() // ensures sidebar re-renders on theme change
 
   return (
-    <aside className="sidebar">
+    <motion.aside className="sidebar" {...slideLeft}>
       <div className="sidebar-top">
         <div className="sidebar-header">
           {/* Platform switch */}
@@ -128,6 +130,6 @@ export default function Sidebar() {
           </div>
         </div>
       </div>
-    </aside>
+    </motion.aside>
   )
 }

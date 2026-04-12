@@ -105,6 +105,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
       b.dataset.primary = state.primary
       if (state.primary === 'custom') {
         applyCustomColor(state.customColor, isDark)
+        applyVarsToRoot({ '--brand-btn': state.customColor, '--brand-btn-dark': darken(state.customColor, 0.12) })
       }
     } else {
       delete b.dataset.neutral
