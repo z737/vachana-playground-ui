@@ -11,7 +11,7 @@ const PAGES = [
 ]
 
 export default function ThemePlayground() {
-  const { state, setState, isPanelOpen, setPanelOpen, RAINBOW } = useTheme()
+  const { state, setState, isPanelOpen, setPanelOpen } = useTheme()
   const navigate  = useNavigate()
   const location  = useLocation()
   const panelRef  = useRef<HTMLDivElement>(null)

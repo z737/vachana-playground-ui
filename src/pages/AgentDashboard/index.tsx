@@ -1,6 +1,6 @@
 import {
   BarChart2, Phone, User, UserCheck, ChevronDown,
-  Grid3x3, Expand, MoreVertical, SlidersHorizontal,
+  Expand, MoreVertical, SlidersHorizontal,
   Calendar, Download, TrendingUp, Clock, Search, Upload, Palette
 } from 'lucide-react'
 import { motion } from 'framer-motion'
@@ -196,7 +196,7 @@ export default function AgentDashboardPage() {
                         borderRadius: 8, fontSize: 12, color: 'var(--text-primary)',
                         boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
                       }}
-                      formatter={(val: number) => val.toLocaleString()}
+                      formatter={(val) => Number(val).toLocaleString()}
                     />
                     <Line dataKey="attempted"    stroke="var(--brand)"  strokeWidth={2} dot={false} />
                     <Line dataKey="connected"    stroke="#16A34A"       strokeWidth={2} dot={false} />
@@ -232,7 +232,7 @@ export default function AgentDashboardPage() {
                             background: 'var(--bg-surface)', border: '1px solid var(--border-soft)',
                             borderRadius: 8, fontSize: 12, color: 'var(--text-primary)',
                           }}
-                          formatter={(val: number) => `${val}%`}
+                          formatter={(val) => `${Number(val)}%`}
                         />
                       </PieChart>
                     </ResponsiveContainer>

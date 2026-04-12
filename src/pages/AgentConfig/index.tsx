@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import {
-  ChevronLeft, ChevronRight, ChevronDown, Code2, Bot, Users, BookMarked, Wrench,
+  ChevronLeft, ChevronDown, Code2, Bot, Users, BookMarked, Wrench,
   ArrowUpRight, Play, MoreHorizontal, TrendingUp, MessageSquare, HelpCircle, Palette, CheckCheck
 } from 'lucide-react'
 import InyaLogo from '../../assets/Inya Logo.png'

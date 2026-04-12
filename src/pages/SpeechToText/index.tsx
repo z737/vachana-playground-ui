@@ -9,8 +9,8 @@ export default function SpeechToTextPage() {
   const { setPanelOpen } = useTheme()
   const [activeTab, setActiveTab] = useState<'realtime' | 'manual'>('realtime')
   const [activeNavTab, setActiveNavTab] = useState<'playground' | 'code'>('playground')
-  const [model, setModel] = useState('Gnani Vachana V1.1')
-  const [language, setLanguage] = useState('Auto-Detect')
+  const [model] = useState('Gnani Vachana V1.1')
+  const [language] = useState('Auto-Detect')
 
   return (
     <div className="layout">

@@ -1,28 +1,26 @@
 import type { Variants, Transition } from 'framer-motion'
 
-const ease = [0.25, 0.1, 0.25, 1] as const
-
-export const EASE = ease
+const ease = [0.25, 0.1, 0.25, 1] as [number, number, number, number]
 
 // Slide from left — sidebars
-export const slideLeft: { initial: object; animate: object; transition: Transition } = {
-  initial:    { x: -20, opacity: 0 },
-  animate:    { x: 0,   opacity: 1 },
-  transition: { duration: 0.26, ease },
+export const slideLeft = {
+  initial:    { x: -20, opacity: 0 } as const,
+  animate:    { x: 0,   opacity: 1 } as const,
+  transition: { duration: 0.26, ease } satisfies Transition,
 }
 
 // Slide from right — config panels
-export const slideRight: { initial: object; animate: object; transition: Transition } = {
-  initial:    { x: 20, opacity: 0 },
-  animate:    { x: 0,  opacity: 1 },
-  transition: { duration: 0.26, ease, delay: 0.06 },
+export const slideRight = {
+  initial:    { x: 20, opacity: 0 } as const,
+  animate:    { x: 0,  opacity: 1 } as const,
+  transition: { duration: 0.26, ease, delay: 0.06 } satisfies Transition,
 }
 
 // Blur-up — headings and hero text
-export const blurUp: { initial: object; animate: object; transition: Transition } = {
-  initial:    { opacity: 0, y: 8, filter: 'blur(6px)' },
-  animate:    { opacity: 1, y: 0, filter: 'blur(0px)' },
-  transition: { duration: 0.3, ease },
+export const blurUp = {
+  initial:    { opacity: 0, y: 8, filter: 'blur(6px)' } as const,
+  animate:    { opacity: 1, y: 0, filter: 'blur(0px)' } as const,
+  transition: { duration: 0.3, ease } satisfies Transition,
 }
 
 // Stagger container
@@ -38,8 +36,8 @@ export const fadeUp: Variants = {
 }
 
 // Scale-in — mic button, focal elements
-export const scaleIn: { initial: object; animate: object; transition: Transition } = {
-  initial:    { opacity: 0, scale: 0.88 },
-  animate:    { opacity: 1, scale: 1 },
-  transition: { duration: 0.28, ease, delay: 0.16 },
+export const scaleIn = {
+  initial:    { opacity: 0, scale: 0.88 } as const,
+  animate:    { opacity: 1, scale: 1 } as const,
+  transition: { duration: 0.28, ease, delay: 0.16 } satisfies Transition,
 }

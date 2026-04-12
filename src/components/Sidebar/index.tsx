@@ -1,4 +1,4 @@
-import { AlignLeft, Brain, AudioLines, Mic, Languages, ScanFace, KeyRound, BarChart3, CreditCard, BookOpen, ChevronDown, ChevronsUpDown } from 'lucide-react'
+import { AlignLeft, Brain, AudioLines, Mic, Languages, ScanFace, KeyRound, BarChart3, CreditCard, BookOpen, ChevronsUpDown } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useTheme } from '../../context/ThemeContext'
 import VachanaLogo from '../../assets/Logo.png'
